@@ -8,27 +8,6 @@ namespace UnitTests
 {
     public class ScoringCategoriesTests
     {
-        //[Fact]
-        //public void StraightTest()
-        //{
-        //    var straight = new Straight(4, "Straight", 25);
-
-        //    var list = new List<Die>
-        //    {
-        //        new Die(1, 1),
-        //        new Die(2, 2),
-        //        new Die(3, 3),
-        //        new Die(4, 4),
-        //        new Die(5, 5)
-        //    };
-        //    list.ForEach(die => die.Roll());
-
-        //    var result = straight.CountPoints(list);
-
-
-        //    Assert.Equal(25, result);
-        //}
-
         [Theory]
         [InlineData(1, 2, 3, 4, 5)]
         [InlineData(2, 2, 3, 4, 5)]
@@ -50,7 +29,7 @@ namespace UnitTests
             list.ForEach(die => die.Roll());
             var result = straight.CountPoints(list);
 
-            Assert.Equal(points, result);
+            Assert.Equal(points, result.Value);
         }
 
         [Theory]
@@ -74,7 +53,7 @@ namespace UnitTests
             list.ForEach(die => die.Roll());
             var result = straight.CountPoints(list);
 
-            Assert.Equal(0, result);
+            Assert.Equal(0, result.Value);
         }
 
         [Theory]
@@ -95,7 +74,7 @@ namespace UnitTests
             list.ForEach(die => die.Roll());
             var result = straight.CountPoints(list);
 
-            Assert.Equal(points, result);
+            Assert.Equal(points, result.Value);
         }
 
         [Theory]
@@ -118,7 +97,7 @@ namespace UnitTests
             list.ForEach(die => die.Roll());
             var result = straight.CountPoints(list);
 
-            Assert.Equal(0, result);
+            Assert.Equal(0, result.Value);
         }
     }
 }
